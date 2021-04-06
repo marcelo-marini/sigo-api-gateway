@@ -25,11 +25,11 @@ steps:
         "Routes": [
           {
             "DownstreamPathTemplate": "/api/standards",
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
               {
-                "Host": "https://sigo-api-gateway.azurewebsites.net",
-                "Port": 443
+                "Host": "http://sigo-api-gateway.azurewebsites.net",
+                "Port": 80
               }
             ],
             "UpstreamPathTemplate": "/standards",
@@ -41,11 +41,11 @@ steps:
           },
           {
             "DownstreamPathTemplate": "/api/standards/{id}",
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
               {
-                "Host": "https://sigo-api-gateway.azurewebsites.net",
-                "Port": 443
+                "Host": "http://sigo-api-gateway.azurewebsites.net",
+                "Port": 80
               }
             ],
             "UpstreamPathTemplate": "/standards/{id}",
