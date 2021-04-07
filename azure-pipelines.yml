@@ -28,7 +28,7 @@ steps:
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
               {
-                "Host": "http://sigo-api-gateway.azurewebsites.net",
+                "Host": "http://sigo-tcc-marini.azurewebsites.net",
                 "Port": 80
               }
             ],
@@ -44,7 +44,7 @@ steps:
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
               {
-                "Host": "http://sigo-api-gateway.azurewebsites.net",
+                "Host": "http://sigo-tcc-marini.azurewebsites.net",
                 "Port": 80
               }
             ],
