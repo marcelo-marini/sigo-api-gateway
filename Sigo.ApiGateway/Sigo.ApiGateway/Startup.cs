@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,14 +45,23 @@ namespace Sigo.ApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-                app.UseHttpsRedirection();
-            }
+
+            app.UseHsts();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            var forwardOptions = new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
+                RequireHeaderSymmetry = false
+            };
+
+            forwardOptions.KnownNetworks.Clear();
+            forwardOptions.KnownProxies.Clear();
+
+            app.UseForwardedHeaders(forwardOptions);
 
             app.UseMiddleware<RequestResponseLoggingMiddleware>();
 
