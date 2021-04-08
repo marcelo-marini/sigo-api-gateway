@@ -17,47 +17,6 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: file-creator@6
-  inputs:
-    filepath: 'ocelot.json'
-    filecontent: |
-      {
-        "Routes": [
-          {
-            "DownstreamPathTemplate": "/api/standards",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-              {
-                "Host": "http://sigo-tcc-marini.azurewebsites.net",
-                "Port": 80
-              }
-            ],
-            "UpstreamPathTemplate": "/standards",
-            "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-            "AuthenticationOptions": {
-              "AuthenticationProviderKey": "IdentityApiKey",
-              "AllowedScopes": []
-            }
-          },
-          {
-            "DownstreamPathTemplate": "/api/standards/{id}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-              {
-                "Host": "http://sigo-tcc-marini.azurewebsites.net",
-                "Port": 80
-              }
-            ],
-            "UpstreamPathTemplate": "/standards/{id}",
-            "UpstreamHttpMethod": ["GET", "PUT", "DELETE" ],
-            "AuthenticationOptions": {
-              "AuthenticationProviderKey": "IdentityApiKey",
-              "AllowedScopes": []
-            }
-          }
-        ]
-      }
-    fileoverwrite: true
 - task: Docker@2
   inputs:
     containerRegistry: 'Sigo Puc Container Registry'
