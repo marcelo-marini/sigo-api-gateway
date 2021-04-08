@@ -5,8 +5,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://sigo-tcc-marini-standard.azurewebsites.net",
-          "Port": 443
+          "Host": "https://sigo-tcc-marini-standard.azurewebsites.net"
         }
       ],
       "UpstreamPathTemplate": "/standards",
@@ -21,8 +20,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://sigo-tcc-marini-standard.azurewebsites.net",
-          "Port": 443
+          "Host": "https://sigo-tcc-marini-standard.azurewebsites.net"
         }
       ],
       "UpstreamPathTemplate": "/standards/{id}",
