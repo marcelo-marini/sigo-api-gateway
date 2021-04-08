@@ -40,9 +40,16 @@ namespace Sigo.ApiGateway
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+                app.UseHttpsRedirection();
+            }
 
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
