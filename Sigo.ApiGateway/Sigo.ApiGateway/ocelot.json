@@ -5,7 +5,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sigo-tcc-marini-standard.azurewebsites.net"
+          "Host": "localhost",
+          "Port": 5103
         }
       ],
       "UpstreamPathTemplate": "/standards",
@@ -20,11 +21,12 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sigo-tcc-marini-standard.azurewebsites.net"
+          "Host": "localhost",
+          "Port": 5103
         }
       ],
       "UpstreamPathTemplate": "/standards/{id}",
-      "UpstreamHttpMethod": ["GET", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": []
@@ -32,4 +34,3 @@
     }
   ]
 }
-
