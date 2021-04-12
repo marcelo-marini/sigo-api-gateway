@@ -26,7 +26,7 @@
         }
       ],
       "UpstreamPathTemplate": "/standards/{id}",
-      "UpstreamHttpMethod": ["GET", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
         "AllowedScopes": []
@@ -34,4 +34,3 @@
     }
   ]
 }
-
